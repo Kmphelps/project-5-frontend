@@ -35,9 +35,9 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 
 ## API Documentation / Routes
 
-* User create/read/update
-* Feature create/read/update/destroy
-* Signup create/read
+* User create/update
+* Feature index/show/update/destroy
+* Signup create
 
 
 ## Mockup
