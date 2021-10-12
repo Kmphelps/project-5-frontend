@@ -12,6 +12,8 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 * As a user, I want to be able to share a feature/project with another user, so that they can collaborate on the resources with me
 * As a user, I want to be able to add a new feature/project, so that I can add resources to it
 * As a user, I want to be able to modify a feature/project, so that I can add resources to it as I gather them
+* As a user, I want to be able to log out of the app, so that no one can access my work if I'm away from my computer
+* As a user, I want to be able to unfollow a feature/project that I'm no longer working on, so that I can keep my dashboard clean
 
 
 ## Stretch Goal User Stories
