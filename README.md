@@ -42,7 +42,7 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 
 ## Mockup
 
-![QAMgrDash](https://user-images.githubusercontent.com/81663925/137029909-ab1d8c94-d28f-403c-a945-cd74fd868ed6.png)
+![QAMgrDash](https://user-images.githubusercontent.com/81663925/137033317-66be7324-8731-47c2-9588-7afebd5cbaa5.png)
 
 
 ![QAMgrEditPg](https://user-images.githubusercontent.com/81663925/137029945-6989281e-b131-48cc-8e76-6238a53eb77e.png)
