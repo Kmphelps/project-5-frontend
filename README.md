@@ -33,7 +33,7 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 * A feature has many users through signups
 
 
-## API Documentation
+## API Documentation / Routes
 
 * User create/read/update
 * Feature create/read/update/destroy
