@@ -36,7 +36,13 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 ## API Documentation / Routes
 
 * User create/update
+ GET/api/users/:id
+ { id: 1 username: “TesterPerson” password: “supersecret” }
+ 
 * Feature index/show/update/destroy
+ GET/api/features/:id
+ { id: 1 name: “Dashboard Widget” mockup: “https://www.researchgate.net/Example-of-a-mockup.png” mockup_link: “https://www.researchgate.net/Example-of-a-mockup.png” test_cases: "testrail.com" access_resources: "VPN, dev database"  }
+ 
 * Signup create
 
 
