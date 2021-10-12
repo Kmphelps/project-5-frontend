@@ -20,6 +20,7 @@ Quality Assurance Engineers and Software Development Engineers in Test have a lo
 
 * As a user, I want to be able to type a question and post it, so that another user can see my question and hopefully answer it.
 * As a user, I want to be able to type notes and save them, so that I can see them later and so that other users can see them
+* As a user, I want to be able to see a preview of Jira user stories that are part of the feature/project (requires integration with Jira)
 
 
 ## Entity Relationship Diagram
