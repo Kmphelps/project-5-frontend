@@ -1,18 +1,17 @@
-# Getting Started with Create React App
+# Test Resource Manager for QA Engineers and SDETs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Pitch
 
-## Available Scripts
+Quality Assurance Engineers and Software Development Engineers in Test have a lot of resources to keep track of. There are project management tools available, but most are geared toward project managers. This app will allow the QA or SDET to gather all of the resources needed to test (and automate tests for) a project or feature. 
 
-In the project directory, you can run:
+## MVP User Stories
 
-### `npm start`
+* As a user, I want to be able to create an account with username and password, so that I can log in 
+As a user, I want to be able to view all of my features/projects on a dashboard, so that I can see what I need to be working on
+As a user, I want to be able to share a feature/project with another user, so that they can collaborate on the resources with me
+As a user, I want to be able to add a new feature/project, so that I can add resources to it
+As a user, I want to be able to modify a feature/project, so that I can add resources to it as I gather them
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
