@@ -2,68 +2,50 @@
 
 ## Pitch
 
-Quality Assurance Engineers and Software Development Engineers in Test have a lot of resources to keep track of. There are project management tools available, but most are geared toward project managers. This app will allow the QA or SDET to gather all of the resources needed to test (and automate tests for) a project or feature. 
+Quality Assurance Engineers and Software Development Engineers in Test have a lot of resources to keep track of for each feature/project that they are working on. There are project management tools available, but most are geared toward project managers. This app will allow the QA or SDET to gather all of the resources needed to test (and automate tests for) a project or feature. 
+
 
 ## MVP User Stories
 
 * As a user, I want to be able to create an account with username and password, so that I can log in 
-As a user, I want to be able to view all of my features/projects on a dashboard, so that I can see what I need to be working on
-As a user, I want to be able to share a feature/project with another user, so that they can collaborate on the resources with me
-As a user, I want to be able to add a new feature/project, so that I can add resources to it
-As a user, I want to be able to modify a feature/project, so that I can add resources to it as I gather them
+* As a user, I want to be able to view all of my features/projects on a dashboard, so that I can see what I need to be working on
+* As a user, I want to be able to share a feature/project with another user, so that they can collaborate on the resources with me
+* As a user, I want to be able to add a new feature/project, so that I can add resources to it
+* As a user, I want to be able to modify a feature/project, so that I can add resources to it as I gather them
 
 
-### `npm test`
+## Stretch Goal User Stories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* As a user, I want to be able to type a question and post it, so that another user can see my question and hopefully answer it.
+* As a user, I want to be able to type notes and save them, so that I can see them later and so that other users can see them
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Entity Relationship Diagram
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screen Shot 2021-10-12 at 1 47 46 PM](https://user-images.githubusercontent.com/81663925/137029708-c355072b-f5e6-487c-ae5a-a652061c7a7d.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* A user has many signups
+* A feature has many signups
+* A user has many features through signups
+* A feature has many users through signups
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API Documentation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* User create/read/update
+* Feature create/read/update/destroy
+* Signup create/read
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Mockup
 
-## Learn More
+![QAMgrDash](https://user-images.githubusercontent.com/81663925/137029909-ab1d8c94-d28f-403c-a945-cd74fd868ed6.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![QAMgrEditPg](https://user-images.githubusercontent.com/81663925/137029945-6989281e-b131-48cc-8e76-6238a53eb77e.png)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
