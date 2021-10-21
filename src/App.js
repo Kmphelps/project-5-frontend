@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import LoginSignup from './components/LoginSignup'
 import Dashboard from './components/Dashboard';
+import FeatureForm from './components/FeatureForm';
 
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
@@ -15,8 +16,8 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     console.log("token: " + token)
-    
-    fetch(`${url}profile`, {
+
+    fetch("http://localhost:3000/profile", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -34,8 +35,8 @@ function App() {
   }, []);
 
 
-  function signup(username, password) {
-    fetch(`${url}users`, {
+  function signup(username, password, avatar) {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +46,8 @@ function App() {
         user: {
           username: `${username}`,
           password: `${password}`,
+          avatar: `${avatar}`,
+
         },
       }),
     })
@@ -62,7 +65,7 @@ function App() {
   }
 
   function login(username, password) {
-    fetch(`${url}login`, {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,14 +104,30 @@ function App() {
       {loggedIn ?
         <Router>
           <nav className="navbar-container">
-            {user ? <h1>Hi {user.username}</h1> : ''}
-            <Link className="links" to="/">Dashboard</Link>
-            <button className="logout" onClick={logout}>Logout</button>
+            {user ?
+              <div><h1>Hi {user.username}</h1>
+                <img src={user.avatar} className="avatar" alt="avatar" /></div>
+              : ''}
+            <Link to="/">
+              <button className="nav-button" type="button">Dashboard</button>
+            </Link>
+            
+            <Link to="/featureform">
+              <button className="nav-button" type="button">Add a New Feature</button>
+            </Link>
+
+            <button className="nav-button" onClick={logout}>Logout</button>
           </nav>
 
           <Route exact path="/">
             <Dashboard currentUser={user} />
           </Route>
+
+          <Route exact path="/featureform">
+            <FeatureForm currentUser={user} />
+          </Route>
+
+
         </Router> :
         <LoginSignup login={login} signup={signup} />
       }

@@ -1,38 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-form {
+  margin-top: 50px;
+  display: flex; 
+  flex-flow: column wrap; 
+  width: 15%;
+  margin-left: 42%;
+  border-width: 2px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+}
+
+.signup-form {
+  margin-top: 50px;
+  display: flex; 
+  flex-flow: column wrap; 
+  width: 15%;
+  margin-left: 42%;
+  border-width: 2px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+}
+
+.navbar-container {
+  background-color: #b1aeae;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 105vh;
+  width: 15%;
 }
 
-.App-link {
-  color: #61dafb;
+.avatar {
+  max-height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-button {
+  width: 100%;
+  margin-top: 3px;
+  padding: 2px;
+  
 }
+
+.dashboard-container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 105vh;
+  width: 85%;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.add-new-feature-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+
+
