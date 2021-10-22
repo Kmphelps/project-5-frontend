@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import LoginSignup from './components/LoginSignup'
 import Dashboard from './components/Dashboard';
 import FeatureForm from './components/FeatureForm';
+import Resources from './components/Resources';
 
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
@@ -130,6 +131,10 @@ function App() {
 
           <Route exact path="/featureform">
             <FeatureForm currentUser={user} />
+          </Route>
+
+          <Route exact path="/features/:id">
+            <Resources currentUser={user} />
           </Route>
 
 

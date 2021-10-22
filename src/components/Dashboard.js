@@ -18,14 +18,16 @@ function Dashboard({currentUser}) {
           if (response.ok) {
             response.json().then((data) => {
               setFeatures(data)
+              console.log({currentUser})
             });
           } else {
             console.log("please log in")
           }
         });
         }, []);
+        
 
-        console.log({features})
+        
 
     
     return (
