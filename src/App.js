@@ -105,8 +105,12 @@ function App() {
         <Router>
           <nav className="navbar-container">
             {user ?
-              <div><h1>Hi {user.username}</h1>
-                <img src={user.avatar} className="avatar" alt="avatar" /></div>
+              <div>
+                <p>TEST RESOURCE MANAGER</p>
+                
+                <h1>Hi {user.username}</h1>
+                <img src={user.avatar} className="avatar" alt="avatar"/>
+              </div>
               : ''}
             <Link to="/">
               <button className="nav-button" type="button">Dashboard</button>
@@ -117,6 +121,7 @@ function App() {
             </Link>
 
             <button className="nav-button" onClick={logout}>Logout</button>
+            <p className="footer-sources">Photo by Alex Andrews from Pexels</p>
           </nav>
 
           <Route exact path="/">

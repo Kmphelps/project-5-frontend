@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import FeatureCard from './FeatureCard';
 
 function Dashboard({currentUser}) {
     const production = "https://project-5-backend.herokuapp.com/";
@@ -6,25 +7,33 @@ function Dashboard({currentUser}) {
     const url = (process.env.NODE_ENV ? production : development);
     const [features, setFeatures] = useState([]);
 
-    // Gets all of the features and sets state
     useEffect(() => {
-        fetch("http://localhost:3000/features")
-            .then((r) => r.json())
-            .then(setFeatures);
-        console.log({ features });
-    }, []);
+        const token = localStorage.getItem("jwt");
+          fetch(`http://localhost:3000/features`, {
+          method: "GET",
+          headers: {
+          Authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          if (response.ok) {
+            response.json().then((data) => {
+              setFeatures(data)
+            });
+          } else {
+            console.log("please log in")
+          }
+        });
+        }, []);
 
-    console.log({currentUser});
-    console.log(process.env.NODE_ENV)
+        console.log({features})
 
-
+    
     return (
-        <div>
             <container className="dashboard-container">
-                <h1>Welcome, {currentUser.username}</h1>
-                
+                {features.map((feature) => (
+                    <FeatureCard key={feature.id} feature={feature} />
+                ))}
             </container>
-        </div>
     )
 }
 

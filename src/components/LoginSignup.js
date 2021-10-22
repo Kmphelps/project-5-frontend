@@ -20,7 +20,7 @@ function LoginSignup({ login, signup }) {
 
     return (
         <container className="landing-page-container">
-            <h1>QA RESOURCE MANAGER</h1>
+            <h1>TEST RESOURCE MANAGER</h1>
             <form className="login-form" onSubmit={(e) => handleSubmitLogin(e)}>
                 <h3>Login Here</h3>
                 <input

@@ -3,6 +3,7 @@
 .App {
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
+  
 }
 
 input {
@@ -14,6 +15,11 @@ input {
 button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
+  margin-bottom: 10px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .login-form {
@@ -22,9 +28,7 @@ button {
   flex-flow: column wrap; 
   width: 15%;
   margin-left: 42%;
-  border-width: 2px;
-  border-color: rgb(8, 8, 8);
-  border-style: solid;
+  background-color: rgb(146, 169, 211);
 }
 
 .signup-form {
@@ -33,28 +37,37 @@ button {
   flex-flow: column wrap; 
   width: 15%;
   margin-left: 42%;
-  border-width: 2px;
-  border-color: rgb(8, 8, 8);
-  border-style: solid;
+  background-color: rgb(146, 169, 211);
 }
 
 .navbar-container {
-  background-color: #b1aeae;
+  background-color: rgb(146, 169, 211);
   display: flex;
   flex-direction: column;
-  height: 105vh;
+  height: 500vh;
   width: 15%;
 }
 
 .avatar {
-  max-height: 100px;
+  max-width: 90%;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  border-width: 2px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  margin-bottom: 30px;
+  
 }
 
 .nav-button {
   width: 100%;
-  margin-top: 3px;
+  margin-top: 5px;
   padding: 2px;
-  
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
 }
 
 .dashboard-container {
@@ -75,12 +88,49 @@ button {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
   width: 80%;
   right: 0px;
   top: 0px;
   position: absolute;
+  
+  
 }
 
+.feature-card {
+  border-width: 2px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+  width: 25%;
+  margin-top: 30px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
 
+.feature-image {
+  width: 80%;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  border-width: 2px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+}
 
+.feature-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 25%;
+  margin-top: 10px;
+}
+
+.feature-form-inputs {
+  margin-bottom: 20px;
+  height: 20px;
+}
+
+.footer-sources {
+  padding-top: 500px;
+}
