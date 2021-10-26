@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 function FeatureCard({ currentUser, feature }) {
 
     return (
-        <container className="feature-card">
+        <div className="feature-card">
             <h2>Assignment: {feature.name}</h2>
-            <img className="feature-image" src={feature_image} alt="feature image"/>
+            <img className="feature-image" src={feature_image} alt="feature"/>
             <h3>Test Status: {feature.test_status}</h3>
             <h3>Priority: {feature.priority}</h3>
             <Link to={`/features/${feature.id}`}> 
@@ -14,7 +14,7 @@ function FeatureCard({ currentUser, feature }) {
             </Link>
             
             <button>Share</button>
-        </container>
+        </div>
     )
 
 }

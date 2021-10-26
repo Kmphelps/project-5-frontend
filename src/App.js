@@ -8,9 +8,9 @@ import Resources from './components/Resources';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 function App() {
-  const production = "https://project-5-backend.herokuapp.com/";
-  const development = "http://localhost:3000/";
-  const url = (process.env.NODE_ENV ? production : development);
+  // const production = "https://project-5-backend.herokuapp.com/";
+  // const development = "http://localhost:3000/";
+  // const url = (process.env.NODE_ENV ? production : development);
   const [user, setUser] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
 

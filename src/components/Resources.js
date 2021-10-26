@@ -2,25 +2,40 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function Resources() {
-    const [name, setName] = useState('');
-    const [{ data: feature, error, status }, setFeature] = useState({
-        data: null,
-        error: null,
-        status: "pending",
-    });
     const { id } = useParams();
+
+    const [displayName, setDisplayName] = useState('');
+    const [displayWireframes_link, setDisplayWireFramesLink] = useState('');
+    const [displayTest_cases_link, setDisplayTestCasesLink] = useState('');
+    const [displayNeed_access_resources, setDisplayNeedAccessResources] = useState('');
+    const [displayTest_framework, setDisplayTestFramework] = useState('');
+    const [displayProject_mgmt_resources, setDisplayProjectMgmtResources] = useState('');
+    const [displayTest_status, setDisplayTestStatus] = useState('');
+    const [setPriority, setDisplayPriority] = useState(''); 
+
+    const [name, setName] = useState('');
+    
+    
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
           fetch(`http://localhost:3000/features/${id}`, {
           method: "GET",
           headers: {
-          Authorization: `Bearer ${token}`,
-          },
+              Authorization: `Bearer ${token}`,
+        },
         }).then((response) => {
           if (response.ok) {
             response.json().then((feature) => {
-              setFeature({ data: feature, error: null, status: "resolved" })
+                console.log(feature)
+                setDisplayName(feature.name)
+                setDisplayWireFramesLink(feature.wireframes_link)
+                setDisplayTestCasesLink(feature.test_cases_link)
+                setDisplayNeedAccessResources(feature.need_access_resources)
+                setDisplayTestFramework(feature.test_framework)
+                setDisplayProjectMgmtResources(feature.project_mgmt_resources)
+                setDisplayTestStatus(feature.test_status)
+                setDisplayPriority(feature.priority)
             });
           } else {
             console.log("please log in")
@@ -29,12 +44,13 @@ function Resources() {
         }, [id]);
 
     return (
-        <container className="resource-container">
-            <container className="update-feature-container">
+        
+        <div className="resource-container">
+            <div className="update-feature-container">
             <h2>Update Info</h2>
-            <container >
             
             <form className="feature-form">
+                <h2>{displayName}</h2>
                 <input
                     className="feature-form-inputs"
                     placeholder="Name of feature or project"
@@ -92,14 +108,16 @@ function Resources() {
                     onChange={(e) => setName(e.target.value)}
                 />
 
-                <button type="submit">Create</button>
+                <button type="submit">Update</button>
             </form>
-        </container>
-            </container>
-            <container className="messages-container">
+            <button>Leave Project / Feature</button>
+        </div>
+            
+            <div className="messages-container">
             <h2>Messages</h2>
-            </container>
-        </container>
+            </div>
+        </div>
+        
     )
 }
 

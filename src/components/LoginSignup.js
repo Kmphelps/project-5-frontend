@@ -19,7 +19,7 @@ function LoginSignup({ login, signup }) {
     }
 
     return (
-        <container className="landing-page-container">
+        <div className="landing-page-container">
             <h1>TEST RESOURCE MANAGER</h1>
             <form className="login-form" onSubmit={(e) => handleSubmitLogin(e)}>
                 <h3>Login Here</h3>
@@ -61,7 +61,7 @@ function LoginSignup({ login, signup }) {
 
                 <button type="submit">Signup</button>
             </form>
-        </container>
+        </div>
     );
 }
 
