@@ -107,7 +107,7 @@ function App() {
           <nav className="navbar-container">
             {user ?
               <div>
-                <p>TEST RESOURCE MANAGER</p>
+                <p>Q-llaborate</p>
                 
                 <h1>Hi {user.username}</h1>
                 <img src={user.avatar} className="avatar" alt="avatar"/>

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Message from "./Message";
 
-function Resources() {
+function Resources({currentUser}) {
     const { id } = useParams();
     const [feature_id, setFeatureId] = useState('');
+    const [messages, setMessages] = useState([]);
+    const [newMessage, setNewMessage] = useState('');
 
     const [name, setName] = useState('');
     const [wireframes_link, setWireFramesLink] = useState('');
@@ -14,6 +17,7 @@ function Resources() {
     const [test_status, setTestStatus] = useState('');
     const [priority, setPriority] = useState('');
     
+
     useEffect(() => {
         const token = localStorage.getItem("jwt");
           fetch(`http://localhost:3000/features/${id}`, {
@@ -24,7 +28,6 @@ function Resources() {
         }).then((response) => {
           if (response.ok) {
             response.json().then((feature) => {
-                console.log(feature)
                 setName(feature.name)
                 setWireFramesLink(feature.wireframes_link)
                 setTestCasesLink(feature.test_cases_link)
@@ -40,6 +43,25 @@ function Resources() {
           }
         });
         }, [feature_id]);
+
+        useEffect(() => {
+            const token = localStorage.getItem("jwt");
+              fetch(`http://localhost:3000/features/${id}`, {
+              method: "GET",
+              headers: {
+                  Authorization: `Bearer ${token}`,
+            },
+            }).then((response) => {
+              if (response.ok) {
+                response.json().then((data) => {
+                    console.log(data.messages)
+                    setMessages(data.messages) 
+                });
+              } else {
+                console.log("please log in")
+              }
+            });
+            }, [feature_id]);
 
 
         function onSubmit(e) {
@@ -74,6 +96,30 @@ function Resources() {
             setProjectMgmtResources('')
             setTestStatus('')
             setPriority('')
+        }
+
+        function onSubmitMessage(e) {
+            e.preventDefault();
+            const token = localStorage.getItem("jwt");
+            fetch(`http://localhost:3000/messages`, {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "*/*",
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: `${newMessage}`,
+                    user_id: `${currentUser.id}`,
+                    feature_id: `${id}`,
+                    
+                }),
+            })
+                .then(res => res.json())
+                .then(json => setFeatureId(json.id))
+                
+    
+            setNewMessage('')
         }
 
 
@@ -149,6 +195,20 @@ function Resources() {
             
             <div className="messages-container">
             <h2>Messages</h2>
+            {messages.map((message) => (
+                <Message key={message.id} message={message.message}/>
+            ))}
+            <form className="feature-form" onSubmit={onSubmitMessage}>
+                <h2>Write a message</h2>
+                <input
+                    className="message-inputs"
+                    placeholder="Type here.."
+                    type="text"
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                />
+                <button type="submit">Send</button>
+            </form>
             </div>
         </div>
         

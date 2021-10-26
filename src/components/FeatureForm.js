@@ -11,8 +11,6 @@ function FeatureForm(currentUser) {
     const [test_status, setTestStatus] = useState('');
     const [priority, setPriority] = useState('');
 
-    console.log(currentUser.currentUser.id);
-
     useEffect(() => {
         const token = localStorage.getItem("jwt");
         fetch('http://localhost:3000/assignments', {
@@ -30,8 +28,6 @@ function FeatureForm(currentUser) {
             .then(res => res.json())
             .then(json => console.log(json))
     }, [feature_id]);
-
-    
 
     function onSubmit(e) {
         e.preventDefault();
@@ -57,7 +53,6 @@ function FeatureForm(currentUser) {
             .then(res => res.json())
             .then(json => setFeatureId(json.id))
 
-
         setName('')
         setWireFramesLink('')
         setTestCasesLink('')
@@ -66,11 +61,7 @@ function FeatureForm(currentUser) {
         setProjectMgmtResources('')
         setTestStatus('')
         setPriority('')
-
     }
-
-
-
 
     return (
         <div className="add-new-feature-container">
