@@ -81,6 +81,7 @@ button {
   right: 0px;
   top: 0px;
   position: absolute;
+  
 }
 
 .add-new-feature-container {
@@ -99,8 +100,7 @@ button {
   border-color: rgb(8, 8, 8);
   border-style: solid;
   width: 25%;
-  height: 60%;
-  margin-top: 30px;
+  margin: 25px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -121,13 +121,15 @@ button {
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding-left: 25%;
   margin-top: 10px;
+  margin-left: 25%;
 }
 
 .feature-form-inputs {
   margin-bottom: 20px;
   height: 20px;
+  
+  
 }
 
 .resource-container {
