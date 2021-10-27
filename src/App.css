@@ -1,23 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
 
 .App {
-  text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: rgb(231, 233, 236);
+}
+
+div.landing-page-container {
+  background-color: rgb(231, 233, 236);
+  min-height: 300vh;
+}
+
+
+h1 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+h2 {
+  text-align: center;
   
 }
 
-input {
+.h3, h3 {
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
+  padding-bottom: 15px;
+}
+
+.h3 {
+  font-weight: 100;
+}
+
+input {
+  text-align: left;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400; 
+}
+
+input.form-control {
+  margin-top: 5px;
+  margin-bottom: 18px;
 }
 
 button.btn.btn-primary, .btn-primary:active, .btn-primary:visited {
   background-color: rgb(92, 106, 131);
   border-color: black;
-  margin-right: 5px;
   margin-top: 10px;
-  
+  width: 100%;
 }
 
 button.btn-primary:hover {
@@ -27,36 +56,46 @@ button.btn-primary:hover {
 
 button.btn.btn-secondary {
   margin-top: 10px;
+  width: 100%;
 }
 
 button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  margin-bottom: 10px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+
+
 .login-form {
-  margin-top: 50px;
-  display: flex; 
-  flex-flow: column wrap; 
-  width: 20%;
-  margin-left: 38%;
+  margin-top: 40px;
+  margin-right: 50px;
+  width: 22%;
+  margin-left: 25%;
   padding: 30px;
   background-color: rgb(146, 169, 211);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  float: left;
 }
 
 .signup-form {
   margin-top: 50px;
   display: flex; 
   flex-flow: column wrap; 
-  width: 20%;
+  width: 22%;
   margin-left: 38%;
   padding: 30px;
   background-color: rgb(146, 169, 211);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .navbar-container {
@@ -101,7 +140,7 @@ button {
 }
 
 .add-new-feature-container {
-  background-color: white;
+  background-color: rgb(231, 233, 236);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -112,17 +151,17 @@ button {
 }
 
 .feature-card {
+  text-align: center;
   border-width: 2px;
   border-color: rgb(8, 8, 8);
   border-style: solid;
-  width: 25%;
-  margin: 25px;
+  width: 28%;
+  margin: 30px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-  padding-top: 20px;
-  padding-bottom: 25px;
+  padding: 20px 35px 25px 35px;;
 }
 
 .feature-image {

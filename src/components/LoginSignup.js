@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Component } from 'react';
 import Button from 'react-bootstrap/Button';
 
 function LoginSignup({ login, signup }) {
@@ -7,7 +7,7 @@ function LoginSignup({ login, signup }) {
     const [newUsername, setNewUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [avatar, setAvatar] = useState('');
-    
+
     function handleSubmitSignup(e) {
         e.preventDefault()
         signup(newUsername, newPassword, avatar)
@@ -20,45 +20,64 @@ function LoginSignup({ login, signup }) {
 
     return (
         <div className="landing-page-container">
-            <h1>TEST RESOURCE MANAGER</h1>
+            <h1>QA-llaborate</h1>
             <form className="login-form" onSubmit={(e) => handleSubmitLogin(e)}>
                 <h3>Login Here</h3>
-                <input
-                    placeholder="Enter a username"
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    placeholder="Enter a password"
-                    type="text"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+                <div className="form-group">
+                    <label>Username</label>
+                    <input
+                        className="form-control"
+                        placeholder="Enter a username"
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input
+                        className="form-control"
+                        placeholder="Enter a password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
                 <Button variant="primary" type="submit">Login</Button>
             </form>
 
             <form className="signup-form" onSubmit={(e) => handleSubmitSignup(e)}>
-            <h3>Create a New Account Here</h3>
-                <input
-                    placeholder="Enter a username"
-                    type="text"
-                    value={newUsername}
-                    onChange={(e) => setNewUsername(e.target.value)}
-                />
-                <input
-                    placeholder="Enter a password"
-                    type="text"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                />
-                <input
-                    placeholder="Link to an avatar"
-                    type="text"
-                    value={avatar}
-                    onChange={(e) => setAvatar(e.target.value)}
-                />
-
+                <h3>Create a New Account Here</h3>
+                <div className="form-group">
+                    <label>Username</label>
+                    <input
+                        className="form-control"
+                        placeholder="Enter a username"
+                        type="text"
+                        value={newUsername}
+                        onChange={(e) => setNewUsername(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input
+                        className="form-control"
+                        placeholder="Enter a password"
+                        type="password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Avatar</label>
+                    <input
+                        className="form-control"
+                        placeholder="Link to an avatar"
+                        type="text"
+                        value={avatar}
+                        onChange={(e) => setAvatar(e.target.value)}
+                    />
+                </div>
                 <Button variant="primary" type="submit">Signup</Button>
             </form>
         </div>

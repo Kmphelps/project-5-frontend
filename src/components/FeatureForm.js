@@ -74,64 +74,91 @@ function FeatureForm(currentUser) {
             <Form className="feature-form" onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Name of Feature or Project</Form.Label>
-                    <Form.Control as="textarea" rows={1} value={name} onChange={ e => setName(e.target.value)} /> 
+                    <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Enter name"
+                        value={name}
+                        onChange={e => setName(e.target.value)} 
+                        />
                 </Form.Group>
-                {/*<input
-                    className="feature-form-inputs"
-                    placeholder="Name of feature or project"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />*/}
-                <input
-                    className="feature-form-inputs"
-                    placeholder="Link to wireframes"
-                    type="text"
-                    value={wireframes_link}
-                    onChange={(e) => setWireFramesLink(e.target.value)}
-                />
-                <input
-                    className="feature-form-inputs"
-                    placeholder="Link to test suite"
-                    type="text"
-                    value={test_cases_link}
-                    onChange={(e) => setTestCasesLink(e.target.value)}
-                />
-                <input
-                    className="feature-form-inputs"
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Wireframes</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Link to wireframes"
+                        value={wireframes_link}
+                        onChange={e => setWireFramesLink(e.target.value)} 
+                        />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Test Cases</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Link to test suite"
+                        value={test_cases_link}
+                        onChange={e => setTestCasesLink(e.target.value)}
+                    />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Test Resources</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
                     placeholder="List all resources that you'll need access to"
-                    type="text"
                     value={need_access_resources}
-                    onChange={(e) => setNeedAccessResources(e.target.value)}
+                    onChange={e => setNeedAccessResources(e.target.value)}
                 />
-                <input
-                    className="feature-form-inputs"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Test Automation</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
                     placeholder="Which test framework are you using? Language?"
-                    type="text"
                     value={test_framework}
-                    onChange={(e) => setTestFramework(e.target.value)}
+                    onChange={e => setTestFramework(e.target.value)}
                 />
-                <input
-                    className="feature-form-inputs"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Project Management Resources</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
                     placeholder="Link to project management resources"
-                    type="text"
                     value={project_mgmt_resources}
-                    onChange={(e) => setProjectMgmtResources(e.target.value)}
+                    onChange={e => setProjectMgmtResources(e.target.value)}
                 />
-                <input
-                    className="feature-form-inputs"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Priority</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
                     placeholder="What is the priority of this feature or project?"
-                    type="text"
                     value={test_status}
-                    onChange={(e) => setTestStatus(e.target.value)}
+                    onChange={e => setTestStatus(e.target.value)}
                 />
-                <input
-                    className="feature-form-inputs"
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Status</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
                     placeholder="What is the test status?"
-                    type="text"
                     value={priority}
-                    onChange={(e) => setPriority(e.target.value)}
+                    onChange={e => setPriority(e.target.value)}
                 />
+                </Form.Group>
 
                 <Button variant="secondary" type="submit">Create</Button>
             </Form>

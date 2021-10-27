@@ -59,7 +59,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
     return (
         <div className="feature-card">
-            <h3>Assignment: {feature.name}</h3>
+            <h4>Assignment: {feature.name}</h4>
             <img className="feature-image" src={feature_image} alt="feature" />
             <h5>Test Status: {feature.test_status}</h5>
             <h5>Priority: {feature.priority}</h5>
