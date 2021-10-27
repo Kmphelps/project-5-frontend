@@ -31,6 +31,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        alert("Shared!");
         const token = localStorage.getItem("jwt");
         fetch(`http://localhost:3000/assignments`, {
             method: "POST",
@@ -53,15 +54,14 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
     }
 
 
-
     return (
         <div className="feature-card">
-            <h2>Assignment: {feature.name}</h2>
+            <h3>Assignment: {feature.name}</h3>
             <img className="feature-image" src={feature_image} alt="feature" />
-            <h3>Test Status: {feature.test_status}</h3>
-            <h3>Priority: {feature.priority}</h3>
+            <h5>Test Status: {feature.test_status}</h5>
+            <h5>Priority: {feature.priority}</h5>
             <Link to={`/features/${feature.id}`}>
-                <button type="button">Resources</button>
+                <Button variant="primary" >Resources</Button>
             </Link>
 
             <Button variant="primary" onClick={handleShow}>
@@ -70,11 +70,11 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Select another user to share this feature/project with</Modal.Title>
+                    <Modal.Title>SHARE WITH A TEAM MEMBER</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
-                        <h2>Add a User</h2>
+                        
                         <div>
                             <select
                                 className="select-chore-dropdown"
@@ -82,7 +82,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
                                 value={userId}
                                 onChange={(e) => setUserId(e.target.value)}
                             >
-                                <option value="">Select user...</option>
+                                <option value="">Select a team member...</option>
                                 {users.map((user) => (
                                     <option key={user.id} value={user.id}>
                                         {user.username}
@@ -95,7 +95,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
                     {err}
                 </p>
             ))} */}
-                        <button className="submit" type="submit">Submit</button>
+                        <Button className="submit-share-button" type="submit">Submit</Button>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

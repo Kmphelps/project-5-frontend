@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Form, Col, Button } from "react-bootstrap";
 
 function FeatureForm(currentUser) {
     const [feature_id, setFeatureId] = useState('');
@@ -67,14 +68,18 @@ function FeatureForm(currentUser) {
     return (
         <div className="add-new-feature-container">
             <h1>Add a Feature or Project</h1>
-            <form className="feature-form" onSubmit={onSubmit}>
-                <input
+            <Form className="feature-form" onSubmit={onSubmit}>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Name of Feature or Project</Form.Label>
+                    <Form.Control as="textarea" rows={1} value={name} onChange={ e => setName(e.target.value)} /> 
+                </Form.Group>
+                {/*<input
                     className="feature-form-inputs"
                     placeholder="Name of feature or project"
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                />
+                />*/}
                 <input
                     className="feature-form-inputs"
                     placeholder="Link to wireframes"
@@ -125,8 +130,8 @@ function FeatureForm(currentUser) {
                     onChange={(e) => setPriority(e.target.value)}
                 />
 
-                <button type="submit">Create</button>
-            </form>
+                <Button variant="secondary" type="submit">Create</Button>
+            </Form>
         </div>
     );
 }

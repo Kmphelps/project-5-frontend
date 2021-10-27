@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 function LoginSignup({ login, signup }) {
     const [username, setUsername] = useState('');
@@ -6,6 +7,7 @@ function LoginSignup({ login, signup }) {
     const [newUsername, setNewUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [avatar, setAvatar] = useState('');
+    
 
 
     function handleSubmitSignup(e) {
@@ -35,7 +37,7 @@ function LoginSignup({ login, signup }) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type="submit">Login</button>
+                <Button variant="primary" type="submit">Login</Button>
             </form>
 
             <form className="signup-form" onSubmit={(e) => handleSubmitSignup(e)}>
@@ -59,7 +61,7 @@ function LoginSignup({ login, signup }) {
                     onChange={(e) => setAvatar(e.target.value)}
                 />
 
-                <button type="submit">Signup</button>
+                <Button variant="primary" type="submit">Signup</Button>
             </form>
         </div>
     );

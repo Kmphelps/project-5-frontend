@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Message from "./Message";
+import Button from 'react-bootstrap/Button';
 
 function Resources({currentUser}) {
     const { id } = useParams();
@@ -197,26 +198,28 @@ function Resources({currentUser}) {
                     onChange={(e) => setPriority(e.target.value)}
                 />
 
-                <button type="submit">Update</button>
+                <Button variant="primary" type="submit">Update</Button>
             </form>
-            <button>Leave Project / Feature</button>
+            
         </div>
             
             <div className="messages-container">
             <h2>Messages</h2>
+            <div className="message-block">
             {messages.map((message) => (
                 <Message key={message.id} message={message}/>
             ))}
+            </div>
             <form className="feature-form" onSubmit={onSubmitMessage}>
-                <h2>Write a message</h2>
+                
                 <input
                     className="message-inputs"
-                    placeholder="Type here.."
+                    placeholder="Type here..."
                     type="text"
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                 />
-                <button type="submit">Send</button>
+                <Button variant="primary" type="submit">Send Message</Button>
             </form>
             </div>
         </div>

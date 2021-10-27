@@ -4,6 +4,7 @@ import LoginSignup from './components/LoginSignup'
 import Dashboard from './components/Dashboard';
 import FeatureForm from './components/FeatureForm';
 import Resources from './components/Resources';
+import Button from 'react-bootstrap/Button';
 
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
@@ -114,14 +115,14 @@ function App() {
               </div>
               : ''}
             <Link to="/">
-              <button className="nav-button" type="button">Dashboard</button>
+              <Button variant="primary" className="nav-button" type="button">Dashboard</Button>
             </Link>
             
             <Link to="/featureform">
-              <button className="nav-button" type="button">Add a New Feature</button>
+              <Button variant="primary" className="nav-button" type="button">Add a New Feature</Button>
             </Link>
 
-            <button className="nav-button" onClick={logout}>Logout</button>
+            <Button variant="primary" className="nav-button" onClick={logout}>Logout</Button>
             <p className="footer-sources">Photo by Alex Andrews from Pexels</p>
           </nav>
 
