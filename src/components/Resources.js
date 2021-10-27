@@ -7,6 +7,8 @@ function Resources({currentUser}) {
     const [feature_id, setFeatureId] = useState('');
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
+    const [feature, setFeature] = useState([]);
+    const [newMessagePost, setNewMessagePost] = useState([]);
 
     const [name, setName] = useState('');
     const [wireframes_link, setWireFramesLink] = useState('');
@@ -27,22 +29,22 @@ function Resources({currentUser}) {
         },
         }).then((response) => {
           if (response.ok) {
-            response.json().then((feature) => {
-                setName(feature.name)
-                setWireFramesLink(feature.wireframes_link)
-                setTestCasesLink(feature.test_cases_link)
-                setNeedAccessResources(feature.need_access_resources)
-                setTestFramework(feature.test_framework)
-                setProjectMgmtResources(feature.project_mgmt_resources)
-                setTestStatus(feature.test_status)
-                setPriority(feature.priority)
+            response.json().then((data) => {
+                setName(data.name)
+                setWireFramesLink(data.wireframes_link)
+                setTestCasesLink(data.test_cases_link)
+                setNeedAccessResources(data.need_access_resources)
+                setTestFramework(data.test_framework)
+                setProjectMgmtResources(data.project_mgmt_resources)
+                setTestStatus(data.test_status)
+                setPriority(data.priority)
                 
             });
           } else {
             console.log("please log in")
           }
         });
-        }, [feature_id]);
+        }, [feature]);
 
         useEffect(() => {
             const token = localStorage.getItem("jwt");
@@ -54,18 +56,18 @@ function Resources({currentUser}) {
             }).then((response) => {
               if (response.ok) {
                 response.json().then((data) => {
-                    console.log(data.messages)
                     setMessages(data.messages) 
                 });
               } else {
                 console.log("please log in")
               }
             });
-            }, [feature_id]);
+            }, [newMessagePost]);
 
 
         function onSubmit(e) {
             e.preventDefault();
+            alert("Changes saved!");
             const token = localStorage.getItem("jwt");
             fetch(`http://localhost:3000/features/${id}`, {
                 method: "PATCH",
@@ -86,7 +88,11 @@ function Resources({currentUser}) {
                 }),
             })
                 .then(res => res.json())
-                .then(json => setFeatureId(json.id))
+                .then(json => {
+                    const updatedFeature = json;
+                    setFeature(updatedFeature);
+                });
+                    //setFeatureId(json.id))
     
             setName('')
             setWireFramesLink('')
@@ -112,16 +118,19 @@ function Resources({currentUser}) {
                     message: `${newMessage}`,
                     user_id: `${currentUser.id}`,
                     feature_id: `${id}`,
-                    
                 }),
             })
                 .then(res => res.json())
-                .then(json => setFeatureId(json.id))
+                .then(json => {
+                    const updatedMessagePost = json;
+                    setNewMessagePost(updatedMessagePost);
+                });
+                    //setFeatureId(json.id))
                 
-    
             setNewMessage('')
         }
 
+        
 
     return (
         
@@ -196,7 +205,7 @@ function Resources({currentUser}) {
             <div className="messages-container">
             <h2>Messages</h2>
             {messages.map((message) => (
-                <Message key={message.id} message={message.message}/>
+                <Message key={message.id} message={message}/>
             ))}
             <form className="feature-form" onSubmit={onSubmitMessage}>
                 <h2>Write a message</h2>

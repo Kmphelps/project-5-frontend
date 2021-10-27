@@ -28,15 +28,30 @@ function Dashboard({currentUser}) {
      });
      }, []);
 
+     function handleDelete(id, e) {
+      e.preventDefault();
+      const token = localStorage.getItem("jwt");
+      fetch(`http://localhost:3000/features/${id}`, {
+          method: "DELETE",
+          headers: {
+              Authorization: `Bearer ${token}`
+          },
+      })
+          .then(res => res.json())
+          .then(json => 
+            {
+            const updatedFeatures = features.filter((feature) => feature.id !== id);
+            setFeatures(updatedFeatures);
+          }
+          );
+  }
 
     return (
-        
             <div className="dashboard-container">
                 {features.map((feature) => (
-                    <FeatureCard key={feature.id} feature={feature} />
+                    <FeatureCard handleDelete={handleDelete} key={feature.id} feature={feature} />
                 ))}
-            </div>
-               
+            </div>          
     )
 }
 

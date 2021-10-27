@@ -31,6 +31,7 @@ function FeatureForm(currentUser) {
 
     function onSubmit(e) {
         e.preventDefault();
+        alert("Created! Navigate to your dashboard to view or edit.");
         const token = localStorage.getItem("jwt");
         fetch(`http://localhost:3000/features`, {
             method: "POST",

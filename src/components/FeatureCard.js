@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function FeatureCard({ currentUser, feature }) {
+function FeatureCard({ currentUser, feature, handleDelete }) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -21,7 +21,6 @@ function FeatureCard({ currentUser, feature }) {
         }).then((response) => {
             if (response.ok) {
                 response.json().then((data) => {
-
                     setUsers(data)
                 });
             } else {
@@ -47,8 +46,13 @@ function FeatureCard({ currentUser, feature }) {
         })
             .then(res => res.json())
             .then(json => console.log(json.id))
-
     }
+
+    function handleDeleteButton(e) {
+        handleDelete(feature.id, e)
+    }
+
+
 
     return (
         <div className="feature-card">
@@ -93,7 +97,6 @@ function FeatureCard({ currentUser, feature }) {
             ))} */}
                         <button className="submit" type="submit">Submit</button>
                     </form>
-
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
@@ -104,7 +107,7 @@ function FeatureCard({ currentUser, feature }) {
                     </Button> */}
                 </Modal.Footer>
             </Modal>
-
+            <Button variant="secondary" onClick={handleDeleteButton}>Delete</Button>
 
         </div>
     )
