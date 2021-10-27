@@ -9,17 +9,15 @@ import Button from 'react-bootstrap/Button';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 function App() {
-  // const production = "https://project-5-backend.herokuapp.com/";
-  // const development = "http://localhost:3000/";
-  // const url = (process.env.NODE_ENV ? production : development);
+  const production = "https://project-5-backend.herokuapp.com/";
+  const development = "http://localhost:3000/";
+  const url = (process.env.NODE_ENV === 'production' ? production : development);
   const [user, setUser] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
-    console.log("token: " + token)
-
-    fetch("http://localhost:3000/profile", {
+    fetch(`${url}/profile`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -38,7 +36,7 @@ function App() {
 
 
   function signup(username, password, avatar) {
-    fetch("http://localhost:3000/users", {
+    fetch(`${url}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +65,7 @@ function App() {
   }
 
   function login(username, password) {
-    fetch("http://localhost:3000/login", {
+    fetch(`${url}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

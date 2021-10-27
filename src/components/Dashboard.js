@@ -3,16 +3,14 @@ import FeatureCard from './FeatureCard';
 
 
 function Dashboard({currentUser}) {
-    // const production = "https://project-5-backend.herokuapp.com/";
-    // const development = "http://localhost:3000/";
-    // const url = (process.env.NODE_ENV ? production : development);
+    const production = "https://project-5-backend.herokuapp.com/";
+    const development = "http://localhost:3000/";
+    const url = (process.env.NODE_ENV === 'production' ? production : development);
     const [features, setFeatures] = useState([]);
-    
-    
 
  useEffect(() => {
      const token = localStorage.getItem("jwt");
-       fetch(`http://localhost:3000/profile`, {
+       fetch(`${url}/profile`, {
        method: "GET",
        headers: {
        Authorization: `Bearer ${token}`,
@@ -31,7 +29,7 @@ function Dashboard({currentUser}) {
      function handleDelete(id, e) {
       e.preventDefault();
       const token = localStorage.getItem("jwt");
-      fetch(`http://localhost:3000/features/${id}`, {
+      fetch(`${url}/features/${id}`, {
           method: "DELETE",
           headers: {
               Authorization: `Bearer ${token}`

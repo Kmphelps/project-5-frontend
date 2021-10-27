@@ -8,8 +8,6 @@ function LoginSignup({ login, signup }) {
     const [newPassword, setNewPassword] = useState('');
     const [avatar, setAvatar] = useState('');
     
-
-
     function handleSubmitSignup(e) {
         e.preventDefault()
         signup(newUsername, newPassword, avatar)

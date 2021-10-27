@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function FeatureCard({ currentUser, feature, handleDelete }) {
+    const production = "https://project-5-backend.herokuapp.com/";
+    const development = "http://localhost:3000/";
+    const url = (process.env.NODE_ENV === 'production' ? production : development);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -13,7 +16,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-        fetch(`http://localhost:3000/users`, {
+        fetch(`${url}/users`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -33,7 +36,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
         e.preventDefault();
         alert("Shared!");
         const token = localStorage.getItem("jwt");
-        fetch(`http://localhost:3000/assignments`, {
+        fetch(`${url}/assignments`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -74,7 +77,7 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
-                        
+
                         <div>
                             <select
                                 className="select-chore-dropdown"

@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Form, Col, Button } from "react-bootstrap";
 
 function FeatureForm(currentUser) {
+    const production = "https://project-5-backend.herokuapp.com/";
+    const development = "http://localhost:3000/";
+    const url = (process.env.NODE_ENV === 'production' ? production : development);
     const [feature_id, setFeatureId] = useState('');
     const [name, setName] = useState('');
     const [wireframes_link, setWireFramesLink] = useState('');
@@ -14,7 +17,7 @@ function FeatureForm(currentUser) {
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-        fetch('http://localhost:3000/assignments', {
+        fetch(`${url}/assignments`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -34,7 +37,7 @@ function FeatureForm(currentUser) {
         e.preventDefault();
         alert("Created! Navigate to your dashboard to view or edit.");
         const token = localStorage.getItem("jwt");
-        fetch(`http://localhost:3000/features`, {
+        fetch(`${url}/features`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`,

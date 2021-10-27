@@ -4,8 +4,11 @@ import Message from "./Message";
 import Button from 'react-bootstrap/Button';
 
 function Resources({currentUser}) {
+    const production = "https://project-5-backend.herokuapp.com/";
+    const development = "http://localhost:3000/";
+    const url = (process.env.NODE_ENV === 'production' ? production : development);
     const { id } = useParams();
-    const [feature_id, setFeatureId] = useState('');
+    //const [feature_id, setFeatureId] = useState('');
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [feature, setFeature] = useState([]);
@@ -23,7 +26,7 @@ function Resources({currentUser}) {
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
-          fetch(`http://localhost:3000/features/${id}`, {
+          fetch(`${url}/features/${id}`, {
           method: "GET",
           headers: {
               Authorization: `Bearer ${token}`,
@@ -49,7 +52,7 @@ function Resources({currentUser}) {
 
         useEffect(() => {
             const token = localStorage.getItem("jwt");
-              fetch(`http://localhost:3000/features/${id}`, {
+              fetch(`${url}/features/${id}`, {
               method: "GET",
               headers: {
                   Authorization: `Bearer ${token}`,
@@ -70,7 +73,7 @@ function Resources({currentUser}) {
             e.preventDefault();
             alert("Changes saved!");
             const token = localStorage.getItem("jwt");
-            fetch(`http://localhost:3000/features/${id}`, {
+            fetch(`${url}/features/${id}`, {
                 method: "PATCH",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -108,7 +111,7 @@ function Resources({currentUser}) {
         function onSubmitMessage(e) {
             e.preventDefault();
             const token = localStorage.getItem("jwt");
-            fetch(`http://localhost:3000/messages`, {
+            fetch(`${url}/messages`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
