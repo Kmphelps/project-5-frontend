@@ -143,23 +143,22 @@ function Resources({ currentUser }) {
                 <h2>Test Resources</h2>
             <br></br>
                 <Form className="feature-form" id="resource-details" onSubmit={onSubmit}>
-                    <p>Name of Feature or Project</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{name}</p>
-                    <p>Wireframes</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}><a href={wireframes_link}>{wireframes_link}</a></p>
-                    <p>Test Cases</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}><a href={test_cases_link}>{test_cases_link}</a></p>
-                    <p>Test Resource Requirements</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{need_access_resources}</p>
-                    <p>Test Framework Info</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{test_framework}</p>
-                    <p>Project Management Resources</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{project_mgmt_resources}</p>
-                    <p>Test Status</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{test_status}</p>
-                    <p>Priority</p>
-                    <p style={{backgroundColor: 'white', padding: '10px'}}>{priority}</p>
-                    <br></br>
+                    <p style={{fontWeight: 'bold'}}>Name of Feature or Project</p>
+                    <p>{name}</p>
+                    <p style={{fontWeight: 'bold'}}>Wireframes</p>
+                    <p><a href={wireframes_link}>{wireframes_link}</a></p>
+                    <p style={{fontWeight: 'bold'}}>Test Cases</p>
+                    <p><a href={test_cases_link}>{test_cases_link}</a></p>
+                    <p style={{fontWeight: 'bold'}}>Test Resource Requirements</p>
+                    <p>{need_access_resources}</p>
+                    <p style={{fontWeight: 'bold'}}>Test Framework Info</p>
+                    <p>{test_framework}</p>
+                    <p style={{fontWeight: 'bold'}}>Project Management Resources</p>
+                    <p>{project_mgmt_resources}</p>
+                    <p style={{fontWeight: 'bold'}}>Test Status</p>
+                    <p>{test_status}</p>
+                    <p style={{fontWeight: 'bold'}}>Priority</p>
+                    <p>{priority}</p>
                     <br></br>
                     <h2>Update Info</h2>
                     <Button variant="primary" type="submit">Submit Changes</Button>
@@ -258,7 +257,7 @@ function Resources({ currentUser }) {
             </div>
 
             <div className="messages-container">
-                <h2>Messages</h2>
+                <h2 style={{color: 'white'}}>Messages</h2>
                 <div className="message-block">
                     {messages.map((message) => (
                         <Message key={message.id} message={message} />
@@ -266,7 +265,7 @@ function Resources({ currentUser }) {
                 </div>
                 <Form className="feature-form" id="send-message" onSubmit={onSubmitMessage}>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Chat with a Team Member</Form.Label>
+                        <Form.Label style={{color: 'white'}}>Chat with a Team Member</Form.Label>
                         <Form.Control
                             as="textarea"
                             rows={4}

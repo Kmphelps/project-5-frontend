@@ -298,16 +298,14 @@ a:link {
 #resource-details {
   overflow-y: scroll;
   max-height: 78vh;
-  padding-right: 20px;
+  padding-right: 10px;
   padding-bottom: 50px;
   margin-bottom: 20px;
   width: 85%;
 }
 
 .update-feature-container {
-  border-width: 2px;
-  border-color: rgb(8, 8, 8);
-  border-style: solid;
+  background: white;
   width: 60%;
   margin-top: 30px;
   -webkit-border-radius: 28;
@@ -320,10 +318,8 @@ a:link {
 
 .messages-container {
   background-color: rgb(146, 169, 211);
-  color: white;
+  color: black;
   border-width: 2px;
-  border-color: rgb(8, 8, 8);
-  border-style: solid;
   max-height: 98vh;
   width: 34%;
   margin-top: 30px;
@@ -336,7 +332,7 @@ a:link {
 }
 
 .message-block {
-  background-color: black;
+  background-color: white;
   height: 50%;
   overflow-y: scroll;
   text-align: left;
@@ -364,7 +360,7 @@ a:link {
   flex-direction: column;
   width: 80%;
   margin-top: 10px;
-  margin-left: 10%;
+  margin-left: 8%;
 }
 
 select#user.select-dropdown {
