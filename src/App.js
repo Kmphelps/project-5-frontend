@@ -106,21 +106,21 @@ function App() {
           <nav className="navbar-container">
             {user ?
               <div>
-                <p>Q-llaborate</p>
-                
-                <h1>Hi {user.username}</h1>
+                <h2 className="navbar-text">QAllaborative</h2>
+                <br></br>
+                <h3 className="navbar-text">Hi {user.username}</h3>
                 <img src={user.avatar} className="avatar" alt="avatar"/>
               </div>
               : ''}
             <Link to="/">
-              <Button variant="primary" className="nav-button" type="button">Dashboard</Button>
+              <Button variant="primary" id="nav-button" className="nav-button" type="button">Dashboard</Button>
             </Link>
             
             <Link to="/featureform">
-              <Button variant="primary" className="nav-button" type="button">Add a New Feature</Button>
+              <Button variant="primary" id="nav-button" className="nav-button" type="button">Add a New Feature</Button>
             </Link>
 
-            <Button variant="primary" className="nav-button" onClick={logout}>Logout</Button>
+            <Button variant="primary" id="nav-button" className="nav-button" onClick={logout}>Logout</Button>
             <p className="footer-sources">Photo by Alex Andrews from Pexels</p>
           </nav>
 

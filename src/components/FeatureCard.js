@@ -59,10 +59,9 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
     return (
         <div className="feature-card">
-            <h4>Assignment: {feature.name}</h4>
+            <h4>Feature: {feature.name}</h4>
             <img className="feature-image" src={feature_image} alt="feature" />
-            <h5>Test Status: {feature.test_status}</h5>
-            <h5>Priority: {feature.priority}</h5>
+            <p>Test Status: {feature.test_status}</p>
             <Link to={`/features/${feature.id}`}>
                 <Button variant="primary" >Resources</Button>
             </Link>
@@ -73,14 +72,14 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>SHARE WITH A TEAM MEMBER</Modal.Title>
+                    <Modal.Title className="navbar-text" >Share with a Team Member</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
 
                         <div>
                             <select
-                                className="select-chore-dropdown"
+                                className="select-dropdown"
                                 id="user"
                                 value={userId}
                                 onChange={(e) => setUserId(e.target.value)}

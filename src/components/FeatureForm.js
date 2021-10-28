@@ -73,11 +73,11 @@ function FeatureForm(currentUser) {
             <h1>Add a Feature or Project</h1>
             <Form className="feature-form" onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Name of Feature or Project</Form.Label>
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
                         as="textarea"
                         rows={1}
-                        placeholder="Enter name"
+                        placeholder="Name of feature or project"
                         value={name}
                         onChange={e => setName(e.target.value)} 
                         />
@@ -142,7 +142,7 @@ function FeatureForm(currentUser) {
                     <Form.Label>Priority</Form.Label>
                 <Form.Control
                     as="textarea"
-                    rows={3}
+                    rows={1}
                     placeholder="What is the priority of this feature or project?"
                     value={test_status}
                     onChange={e => setTestStatus(e.target.value)}
@@ -153,7 +153,7 @@ function FeatureForm(currentUser) {
                     <Form.Label>Status</Form.Label>
                 <Form.Control
                     as="textarea"
-                    rows={3}
+                    rows={1}
                     placeholder="What is the test status?"
                     value={priority}
                     onChange={e => setPriority(e.target.value)}

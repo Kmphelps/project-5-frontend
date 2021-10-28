@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+
 
 .App {
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,17 +8,20 @@
 
 div.landing-page-container {
   background-color: rgb(231, 233, 236);
-  min-height: 300vh;
+  height: 100vh;
 }
 
 
 h1 {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 30px;
+  font-family: 'Caveat', cursive;
 }
 
 h2 {
   text-align: center;
+  padding-top: 15px;
+  font-family: 'Caveat', cursive;
   
 }
 
@@ -31,6 +35,8 @@ h2 {
   font-weight: 100;
 }
 
+
+
 input {
   text-align: left;
   font-family: 'Source Sans Pro', sans-serif;
@@ -42,8 +48,8 @@ input.form-control {
   margin-bottom: 18px;
 }
 
-button.btn.btn-primary, .btn-primary:active, .btn-primary:visited {
-  background-color: rgb(92, 106, 131);
+button.btn.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus-visible {
+  background-color: rgb(146, 169, 211);
   border-color: black;
   margin-top: 10px;
   width: 100%;
@@ -76,7 +82,7 @@ button {
   width: 22%;
   margin-left: 25%;
   padding: 30px;
-  background-color: rgb(146, 169, 211);
+  background-color: white;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -98,13 +104,31 @@ button {
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+#signup-button {
+  border: black;
+  border-width: 1px;
+  border-color: rgb(8, 8, 8);
+  border-style: solid;
+}
+
+
+
 .navbar-container {
-  background-color: rgb(146, 169, 211);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  min-height: 300vh;
-  width: 15%;
+  min-height: 160vh;
+  width: 14%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
+
+.navbar-text {
+  font-family: 'Caveat', cursive;
+
+}
+
 
 .avatar {
   max-width: 90%;
@@ -112,21 +136,26 @@ button {
   -moz-border-radius: 28;
   border-radius: 28px;
   border-width: 2px;
-  border-color: rgb(8, 8, 8);
+  border-color: rgb(231, 233, 236);
   border-style: solid;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-left: 5%;
   
+}
+
+#nav-button {
+  background-color: white;
+  color: black;
 }
 
 .nav-button {
   width: 100%;
   padding: 2px;
-  margin-top: 10px;
 }
 
 .dashboard-container {
-  background-color: white;
+  background-color: rgb(231, 233, 236);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -136,6 +165,7 @@ button {
   right: 0px;
   top: 0px;
   position: absolute;
+  
   
 }
 
@@ -148,12 +178,14 @@ button {
   right: 0px;
   top: 0px;
   position: absolute; 
+  
 }
 
 .feature-card {
+  background-color: white;
   text-align: center;
-  border-width: 2px;
-  border-color: rgb(8, 8, 8);
+  border-width: 1px;
+  border-color: white;
   border-style: solid;
   width: 28%;
   margin: 30px;
@@ -165,13 +197,15 @@ button {
 }
 
 .feature-image {
-  width: 80%;
+  width: 90%;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   border-width: 2px;
   border-color: rgb(8, 8, 8);
   border-style: solid;
+  margin-top: 10px;
+  margin-bottom: 18px;
 }
 
 .submit-share-button {
@@ -192,23 +226,31 @@ button {
 }
 
 .resource-container {
-  background-color: white;
+  background-color: rgb(231, 233, 236);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: 105vh;
   width: 85%;
   right: 0px;
   top: 0px;
   position: absolute;
 }
 
+#resource-details {
+  overflow-y: scroll;
+  max-height: 80vh;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  width: 85%;
+}
+
 .update-feature-container {
   border-width: 2px;
   border-color: rgb(8, 8, 8);
   border-style: solid;
-  width: 54%;
+  width: 60%;
   margin-top: 30px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -216,12 +258,18 @@ button {
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+
 .messages-container {
+  background-color: rgb(146, 169, 211);
+  color: white;
   border-width: 2px;
   border-color: rgb(8, 8, 8);
   border-style: solid;
+  max-height: 95vh;
   width: 34%;
   margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -229,13 +277,41 @@ button {
 }
 
 .message-block {
+  background-color: black;
   height: 50%;
   overflow-y: scroll;
   text-align: left;
-  padding-left: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  margin-top: 20px;
+  word-wrap: break-word;
 }
 
+#send-message {
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 5%;
+}
+
+.feature-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 10%;
+}
+
+select#user.select-dropdown {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+div.modal-content {
+  width: 75%;
+}
 
 .footer-sources {
-  padding-top: 500px;
+  padding-top: 300px;
 }

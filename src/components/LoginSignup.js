@@ -20,7 +20,7 @@ function LoginSignup({ login, signup }) {
 
     return (
         <div className="landing-page-container">
-            <h1>QA-llaborate</h1>
+            <h1>QAllaborative</h1>
             <form className="login-form" onSubmit={(e) => handleSubmitLogin(e)}>
                 <h3>Login Here</h3>
                 <div className="form-group">
@@ -78,7 +78,7 @@ function LoginSignup({ login, signup }) {
                         onChange={(e) => setAvatar(e.target.value)}
                     />
                 </div>
-                <Button variant="primary" type="submit">Signup</Button>
+                <Button id="signup-button" variant="primary" type="submit">Signup</Button>
             </form>
         </div>
     );
