@@ -144,8 +144,8 @@ function Resources({ currentUser }) {
 
                 <Form className="feature-form" id="resource-details" onSubmit={onSubmit}>
                     <p>Name of Assignment: {name}</p>
-                    <p>Wireframes: {wireframes_link}</p>
-                    <p>Test Cases: {test_cases_link}</p>
+                    <p>Wireframes: <a href={wireframes_link}>{wireframes_link}</a></p>
+                    <p>Test Cases: <a href={test_cases_link}>{test_cases_link}</a></p>
                     <p>Test Resource Requirements: {need_access_resources}</p>
                     <p>Test Framework Info: {test_framework}</p>
                     <p>Project Management Resources: {project_mgmt_resources}</p>
