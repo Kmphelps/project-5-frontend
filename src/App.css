@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Roboto:wght@500&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap');
 
 
 .App {
@@ -21,18 +21,25 @@ h1 {
 h2 {
   text-align: center;
   padding-top: 15px;
-  font-family: 'Caveat', cursive;
+  font-family: 'Roboto', sans-serif;
   
 }
 
 .h3, h3 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   padding-bottom: 15px;
 }
 
 .h3 {
   font-weight: 100;
+}
+
+h4 {
+  text-align: center;
+  padding-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  
 }
 
 
@@ -50,7 +57,7 @@ input.form-control {
 
 button.btn.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus-visible {
   background-color: rgb(146, 169, 211);
-  border-color: black;
+  border-color: rgb(146, 169, 211);
   margin-top: 10px;
   width: 100%;
 }
@@ -71,7 +78,7 @@ button {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  
 }
 
 
@@ -107,7 +114,7 @@ button {
 #signup-button {
   border: black;
   border-width: 1px;
-  border-color: rgb(8, 8, 8);
+  border-color: white;
   border-style: solid;
 }
 
@@ -126,27 +133,33 @@ button {
 
 .navbar-text {
   font-family: 'Caveat', cursive;
+}
 
+.hi-text {
+  margin-bottom: 8px;
+  color: rgb(146, 169, 211);
+  text-align: center;
+  font-size: 22px;
 }
 
 
 .avatar {
-  max-width: 90%;
+  max-width: 95%;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   border-width: 2px;
-  border-color: rgb(231, 233, 236);
+  border-color: rgb(146, 169, 211);
   border-style: solid;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-  margin-bottom: 10px;
-  margin-left: 5%;
+  margin-bottom: 30px;
+  margin-left: 1%;
   
 }
 
 #nav-button {
-  background-color: white;
-  color: black;
+  background-color: rgb(146, 169, 211);
+  color: white;
 }
 
 #nav-button:hover {
@@ -159,7 +172,8 @@ button {
   padding: 2px;
 }
 
-.dashboard-container {
+
+.dashboard-header {
   background-color: rgb(231, 233, 236);
   display: flex;
   flex-direction: row;
@@ -170,9 +184,21 @@ button {
   right: 0px;
   top: 0px;
   position: absolute;
-  
-  
 }
+
+.dashboard-container {
+  background-color: rgb(231, 233, 236);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: auto;
+  width: 85%;
+  right: 0px;
+  top: 60px;
+  position: absolute;
+}
+
 
 .add-new-feature-container {
   background-color: rgb(231, 233, 236);
@@ -183,7 +209,6 @@ button {
   right: 0px;
   top: 0px;
   position: absolute; 
-  
 }
 
 .feature-card {
@@ -202,19 +227,43 @@ button {
 }
 
 .feature-image {
-  width: 90%;
+  width: 99%;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   border-width: 2px;
-  border-color: rgb(8, 8, 8);
+  border-color: rgb(146, 169, 211);
   border-style: solid;
   margin-top: 10px;
   margin-bottom: 18px;
 }
 
+#feature-card-btn {
+  color: black;
+  background: white;
+}
+
 .submit-share-button {
   margin-top: 10px;
+}
+
+.card-delete-button {
+  margin-top: 12px;
+  float: right;
+  background: white;
+  border-color: rgb(146, 169, 211);
+  color: grey;
+  font-size: 12px;
+}
+
+.network-image {
+  width: 15%;
+  margin-left: 8px;
+}
+
+.view-image {
+  width: 15%;
+  margin-left: 8px;
 }
 
 .feature-form {
@@ -248,7 +297,7 @@ a:link {
 
 #resource-details {
   overflow-y: scroll;
-  max-height: 80vh;
+  max-height: 78vh;
   padding-right: 20px;
   padding-bottom: 50px;
   margin-bottom: 20px;
@@ -265,6 +314,7 @@ a:link {
   -moz-border-radius: 28;
   border-radius: 28px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  word-wrap: break-word;
 }
 
 
@@ -274,7 +324,7 @@ a:link {
   border-width: 2px;
   border-color: rgb(8, 8, 8);
   border-style: solid;
-  max-height: 95vh;
+  max-height: 98vh;
   width: 34%;
   margin-top: 30px;
   padding-left: 20px;
@@ -303,6 +353,12 @@ a:link {
   margin-top: 5%;
 }
 
+#send-message-btn {
+  border: white;
+  border-width: 1px;
+  border-style: solid;
+}
+
 .feature-form {
   display: flex;
   flex-direction: column;
@@ -322,5 +378,6 @@ div.modal-content {
 }
 
 .footer-sources {
-  padding-top: 300px;
+  padding-top: 100vh;
+  font-size: 12px;
 }

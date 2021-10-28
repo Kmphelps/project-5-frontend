@@ -22,7 +22,7 @@ function LoginSignup({ login, signup }) {
         <div className="landing-page-container">
             <h1>QAllaborative</h1>
             <form className="login-form" onSubmit={(e) => handleSubmitLogin(e)}>
-                <h3>Login Here</h3>
+                <h3>Login</h3>
                 <div className="form-group">
                     <label>Username</label>
                     <input
@@ -47,7 +47,7 @@ function LoginSignup({ login, signup }) {
             </form>
 
             <form className="signup-form" onSubmit={(e) => handleSubmitSignup(e)}>
-                <h3>Create a New Account Here</h3>
+                <h3>Signup</h3>
                 <div className="form-group">
                     <label>Username</label>
                     <input

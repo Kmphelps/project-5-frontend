@@ -108,7 +108,7 @@ function App() {
               <div>
                 <h2 className="navbar-text">QAllaborative</h2>
                 <br></br>
-                <h3 className="navbar-text">Hi {user.username}</h3>
+                <p className="hi-text">Welcome, {user.username}</p>
                 <img src={user.avatar} className="avatar" alt="avatar"/>
               </div>
               : ''}
@@ -121,7 +121,18 @@ function App() {
             </Link>
 
             <Button variant="primary" id="nav-button" className="nav-button" onClick={logout}>Logout</Button>
-            <p className="footer-sources">Photo by Alex Andrews from Pexels</p>
+            
+            <div className="footer-sources">
+              Kayla Phelps 
+              <br></br>
+              2021 Flatiron School
+              <br></br>
+              Sources:
+              Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+              <br></br>
+              Image by <a href="https://pixabay.com/users/stokpic-692575/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=602975">stokpic</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=602975">Pixabay</a>
+              </div>
+            
           </nav>
 
           <Route exact path="/">

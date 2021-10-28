@@ -70,7 +70,7 @@ function FeatureForm(currentUser) {
 
     return (
         <div className="add-new-feature-container">
-            <h1>Add a Feature or Project</h1>
+            <h2>Add a Feature or Project</h2>
             <Form className="feature-form" onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Name</Form.Label>
@@ -160,7 +160,7 @@ function FeatureForm(currentUser) {
                 />
                 </Form.Group>
 
-                <Button variant="secondary" type="submit">Create</Button>
+                <Button variant="primary" type="submit">Create</Button>
             </Form>
         </div>
     );

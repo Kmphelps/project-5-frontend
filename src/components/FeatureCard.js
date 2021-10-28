@@ -1,8 +1,10 @@
-import feature_image from '../images/pexels-alex-andrews.jpg';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import network_image from '../images/network.png';
+import view_image from '../images/view.png';
+import desk_image from '../images/desk.jpg';
 
 function FeatureCard({ currentUser, feature, handleDelete }) {
     const production = "https://project-5-backend.herokuapp.com/";
@@ -59,20 +61,21 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
 
     return (
         <div className="feature-card">
-            <h4>Feature: {feature.name}</h4>
-            <img className="feature-image" src={feature_image} alt="feature" />
-            <p>Test Status: {feature.test_status}</p>
+            <h4>{feature.name}</h4>
+            <img className="feature-image" src={desk_image} alt="feature" />
             <Link to={`/features/${feature.id}`}>
-                <Button variant="primary" >Resources</Button>
+                <Button id="feature-card-btn" variant="primary">View Resources
+                <img className="view-image" src={view_image} alt="view" />
+                </Button>
             </Link>
 
-            <Button variant="primary" onClick={handleShow}>
-                Share
+            <Button id="feature-card-btn" variant="primary" onClick={handleShow}>
+                Share<img className="network-image" src={network_image} alt="network" />
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="navbar-text" >Share with a Team Member</Modal.Title>
+                    <Modal.Title  >Share with a Team Member</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
@@ -109,7 +112,8 @@ function FeatureCard({ currentUser, feature, handleDelete }) {
                     </Button> */}
                 </Modal.Footer>
             </Modal>
-            <Button variant="secondary" onClick={handleDeleteButton}>Delete</Button>
+            
+            <button className="card-delete-button" onClick={handleDeleteButton}>Remove</button>
 
         </div>
     )

@@ -140,19 +140,30 @@ function Resources({ currentUser }) {
 
         <div className="resource-container">
             <div className="update-feature-container">
-                <h2>Resources</h2>
-
+                <h2>Test Resources</h2>
+            <br></br>
                 <Form className="feature-form" id="resource-details" onSubmit={onSubmit}>
-                    <p>Name of Assignment: {name}</p>
-                    <p>Wireframes: <a href={wireframes_link}>{wireframes_link}</a></p>
-                    <p>Test Cases: <a href={test_cases_link}>{test_cases_link}</a></p>
-                    <p>Test Resource Requirements: {need_access_resources}</p>
-                    <p>Test Framework Info: {test_framework}</p>
-                    <p>Project Management Resources: {project_mgmt_resources}</p>
-                    <p>Test Status: {test_status}</p>
-                    <p>Priority: {priority}</p>
+                    <p>Name of Feature or Project</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{name}</p>
+                    <p>Wireframes</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}><a href={wireframes_link}>{wireframes_link}</a></p>
+                    <p>Test Cases</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}><a href={test_cases_link}>{test_cases_link}</a></p>
+                    <p>Test Resource Requirements</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{need_access_resources}</p>
+                    <p>Test Framework Info</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{test_framework}</p>
+                    <p>Project Management Resources</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{project_mgmt_resources}</p>
+                    <p>Test Status</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{test_status}</p>
+                    <p>Priority</p>
+                    <p style={{backgroundColor: 'white', padding: '10px'}}>{priority}</p>
+                    <br></br>
                     <br></br>
                     <h2>Update Info</h2>
+                    <Button variant="primary" type="submit">Submit Changes</Button>
+                    <br></br>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Name</Form.Label>
                         <Form.Control
@@ -241,7 +252,7 @@ function Resources({ currentUser }) {
                     />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">Update</Button>
+                    
                 </Form>
 
             </div>
@@ -265,7 +276,7 @@ function Resources({ currentUser }) {
                         />
                     </Form.Group>
                     
-                    <Button variant="primary" type="submit">Send Message</Button>
+                    <Button id="send-message-btn" variant="primary" type="submit">Send Message</Button>
                 </Form>
             </div>
         </div>
